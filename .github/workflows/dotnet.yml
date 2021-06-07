@@ -22,6 +22,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore -c Release
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test
     - name: Publish Nuget
       run: dotnet nuget push Panosen.Resource/bin/Release/Panosen.Resource.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
